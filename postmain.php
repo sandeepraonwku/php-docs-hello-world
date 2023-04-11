@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $url = 'https://docs.google.com/spreadsheets/d/1NELcsymwPWRIYTULIuGyK50OPAQiGcpMYk-Vk9_ZVB0/formResponse';
-$data = array('key1' => 'value1', 'key2' => 'value2');
+$data = array('entry.1412737491' => '0652723425');
 
 // use key 'http' even if you send the request to https://...
 $options = array(
