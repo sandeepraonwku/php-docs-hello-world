@@ -26,7 +26,7 @@ $url = 'https://docs.google.com/spreadsheets/d/1NELcsymwPWRIYTULIuGyK50OPAQiGcpM
 
 //The data you want to send via POST
 $fields = [
-    'entry.1412737491' => '0652723425',
+    'entry.1412737491' => $name,
      'btnSubmit'         => 'Submit'
 ];
 
