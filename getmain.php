@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input field
   $name = $_POST['card'];
   if (empty($name)) {
-    echo "Name is empty";
+    echo "card is empty";
   } else {
     echo $name;
     $url = "https://docs.google.com/forms/d/e/1FAIpQLSfDFJTp7d9piY6RHUzBeCf5D3r_EfXcup-zy3bOs0azD-ojjQ/formResponse?usp=pp_url&submit=Submit&entry.1412737491=".$name;
