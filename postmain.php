@@ -18,23 +18,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $url = 'https://docs.google.com/spreadsheets/d/1NELcsymwPWRIYTULIuGyK50OPAQiGcpMYk-Vk9_ZVB0/formResponse';
-$data = array('entry.1412737491' => '0652723425');
-var_dump($data);
-// use key 'http' even if you send the request to https://...
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data)
-    )
-);
-var_dump($options);
-$context  = stream_context_create($options);
-var_dump($context);
-$result = file_get_contents($url, false, $context);
-if ($result === FALSE) { /* Handle error */ }
 
-var_dump($result);
+
+//--------------------------------------------------------
+//The url you wish to send the POST request to
+//$url = $file_name;
+
+//The data you want to send via POST
+$fields = [
+    'entry.1412737491' => '0652723425',
+     'btnSubmit'         => 'Submit'
+];
+
+//url-ify the data for the POST
+$fields_string = http_build_query($fields);
+
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_POST, true);
+curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+//So that curl_exec returns the contents of the cURL; rather than echoing it
+curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
+
+//execute post
+$result = curl_exec($ch);
+echo $result;
+
 ?>
 
 </body>
