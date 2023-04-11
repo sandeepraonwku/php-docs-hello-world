@@ -2,14 +2,14 @@
 <body>
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-  Names: <input type="text" name="devaddr">
+card: <input type="text" name="card">
   <input type="submit">
 </form>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input field
-  $name = $_POST['devaddr'];
+  $name = $_POST['card'];
   if (empty($name)) {
     echo "Name is empty";
   } else {
