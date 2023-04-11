@@ -2,7 +2,7 @@
 <body>
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-  Names: <input type="text" name="fname">
+  Name: <input type="text" name="fname">
   <input type="submit">
 </form>
 <?php
