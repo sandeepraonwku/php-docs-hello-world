@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $url = 'https://docs.google.com/spreadsheets/d/1NELcsymwPWRIYTULIuGyK50OPAQiGcpMYk-Vk9_ZVB0/formResponse';
 $data = array('entry.1412737491' => '0652723425');
-
+var_dump($data);
 // use key 'http' even if you send the request to https://...
 $options = array(
     'http' => array(
@@ -28,7 +28,9 @@ $options = array(
         'content' => http_build_query($data)
     )
 );
+var_dump($options);
 $context  = stream_context_create($options);
+var_dump($context);
 $result = file_get_contents($url, false, $context);
 if ($result === FALSE) { /* Handle error */ }
 
