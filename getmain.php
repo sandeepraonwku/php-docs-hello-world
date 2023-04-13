@@ -1,6 +1,9 @@
 <html>
 <body>
-
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Names: <input type="text" name="card">
+  <input type="submit">
+</form>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
